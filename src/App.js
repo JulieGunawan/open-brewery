@@ -2,59 +2,46 @@ import logo from "./beer.png";
 import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Brewery from "./components/Brewery";
 
 function App() {
   let [data, setData] = useState();
-  let [breweryId, setId] = useState(Math.floor(Math.random() * 10000) + 1);
-  // const results = await axios.get(
-  //   "https://api.openbrewerydb.org/breweries/" + breweryId
-  // );
-  // setData(results.data);
-  // if (!data){
-  //   setId(Math.floor(Math.random() * 10000) + 1);
-  // }
+  let [breweryId, setId] = useState(
+    Math.floor(Math.random() * (17000 - 8000) + 8000)
+  );
+  debugger;
   useEffect(() => {
     async function getData() {
       try {
         const results = await axios.get(
           "https://api.openbrewerydb.org/breweries/" + breweryId
         );
+        console.log("Success: " + breweryId);
         setData(results.data);
       } catch (err) {
-        setId(Math.floor(Math.random() * 10000) + 1);
+        console.log("Error: " + breweryId);
+        setId(Math.floor(Math.random() * (17000 - 8000) + 8000));
       }
-      // debugger;
     }
     getData();
-    // getData();
   }, [breweryId]);
-  // useEffect(() => {
-  //   if (!data) {
-  //     setId(Math.floor(Math.random() * 10000) + 1);
-  //   }
-  // }, []);
+
   return data ? (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        Name: {data.name}
-        <br />
-        Type: {data.brewery_type}
-        <br />
-        City: {data.city} <br />
-        <a href={data.website_url}>Brewery Website</a>
-        <a
-          href={
-            "https://maps.google.com/?q=" + data.latitude + "," + data.longitude
+        <h1>Simon's Super Cool Brewery Website</h1>
+      </header>
+      <body>
+        <Brewery info={data} />
+        <button
+          onClick={() =>
+            setId(Math.floor(Math.random() * (17000 - 8000) + 8000))
           }
         >
-          Google Maps Link
-        </a>
-        <br />
-      </header>
-      <button onClick={() => setId(Math.floor(Math.random() * 10000) + 1)}>
-        New Brewery
-      </button>
+          New Brewery
+        </button>
+      </body>
     </div>
   ) : (
     "Loading..."
