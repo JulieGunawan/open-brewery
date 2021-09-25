@@ -24,6 +24,13 @@
   color: hsl(30, 100%, 70%);
 }
 
+.Brewery {
+  background-color: white;
+  border-radius: 5%;
+  margin: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .Header-links {
   display: flex;
   flex-direction: row;
@@ -48,8 +55,8 @@ body {
 }
 
 a {
+  text-decoration: underline;
   color: hsl(60, 100%, 30%);
-  text-decoration: none;
   text-transform: uppercase;
 }
 
