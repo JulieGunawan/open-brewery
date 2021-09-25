@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Brewery } from "../components";
 
 export function City() {
-
-  let [data, setData] = useState();
-  let [city, setCity] = useState();
+  let [data, setData] = useState([]);
+  let [city, setCity] = useState(null);
 
   useEffect(() => {
     async function getData() {
@@ -15,12 +15,20 @@ export function City() {
     }
     getData();
   }, [city]);
+  debugger;
 
-  return data ? <div>
-    <input 
-    onChange={(value) => {
-      debugger;
-      setCity(value)
-    }} />
-  </div> : "City not found";
+  
+  return (<><input
+  onChange={(event) => {
+    setCity(event.target.value);
+  }}
+/><br/>
+
+  {data.length == 0 ? (
+    <div>
+       "City not found"
+    </div>
+  ) : (
+    data.map((ele) => (<Brewery info={ele} />) )
+  )}</>)
 }
