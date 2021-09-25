@@ -2,7 +2,7 @@ import logo from "./beer.png";
 import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Brewery from "./components/Brewery";
+import { Brewery, City } from "./components";
 
 //Mob programming test!
 
@@ -17,6 +17,9 @@ function App() {
       try {
         const results = await axios.get(
           "https://api.openbrewerydb.org/breweries/" + breweryId
+        );
+        const city_results = await axios.get(
+          "https://api.openbrewerydb.org/breweries?by_city=vancouver"
         );
         console.log("Success: " + breweryId);
         setData(results.data);
