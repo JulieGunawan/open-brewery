@@ -16,8 +16,10 @@ export function City() {
     getData();
   }, [city]);
 
-  return data ? <div><City info={data} />
-    <input onChange={(value) => {
+  return data ? <div>
+    <input 
+    onChange={(value) => {
+      debugger;
       setCity(value)
     }} />
   </div> : "City not found";
