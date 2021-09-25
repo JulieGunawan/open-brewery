@@ -1,27 +1,27 @@
-import React from 'react'
+import React from "react";
 
 export function Brewery({ info }) {
   return (
-    <p>
-      Name: {info.name}
+    <p className="Brewery">
+      <b>Name:</b> {info.name}
       <br />
-      Type: {info.brewery_type}
+      <b>Type:</b> {info.brewery_type}
       <br />
-      City: {info.city} <br />
+      <b>City:</b> {info.city} <br />
       <a href={info.website_url}>Brewery Website</a>
       <br />
       {info.latitude ? (
         <a
           href={
-            'https://maps.google.com/?q=' + info.latitude + ',' + info.longitude
+            "https://maps.google.com/?q=" + info.latitude + "," + info.longitude
           }
         >
           Google Maps Link
         </a>
       ) : (
-        ''
+        ""
       )}
       <br />
     </p>
-  )
+  );
 }
