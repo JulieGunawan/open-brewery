@@ -20,10 +20,10 @@ function App() {
         <Link to="/">Random Brewery</Link>
       </header>
       <body>
-        <Router>
+        <Router className="infoCard">
           <RandomBrewery path="/" />
           <City path="/city" />
-         
+        
         </Router>
       </body>
     </div>

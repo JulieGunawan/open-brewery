@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #4a4063;
-  min-height: 60vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,4 +45,12 @@ a {
   color: #4f1271;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.infoCard{
+  display:grid;
+  grid-template-columns: repeat (3, 1fr);
+  /*grid-template-columns: repeat(auto-fit, minmax(20ch,1fr));*/
+  flex-direction: rows;
+  justify-content: flex-start;
 }

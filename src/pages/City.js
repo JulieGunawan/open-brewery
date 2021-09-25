@@ -22,8 +22,7 @@ export function City() {
   onChange={(event) => {
     setCity(event.target.value);
   }}
-/><br/>
-
+/> <br/>
   {data.length == 0 ? (
     <div>
        City not found
