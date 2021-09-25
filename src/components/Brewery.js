@@ -1,5 +1,6 @@
 import React from 'react'
 export default function Brewery({ info }) {
+export function Brewery({ info }) {
   return (
     <p>
       Name: {info.name}

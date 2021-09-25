@@ -2,7 +2,8 @@ import logo from './beer.png'
 import './App.css'
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import Brewery from './components/Brewery'
+
+import { Brewery, City } from './components'
 
 //Mob programming test!
 
