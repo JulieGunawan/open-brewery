@@ -1,3 +1,4 @@
+import React from 'react'
 export default function Brewery({ info }) {
   return (
     <p>
@@ -11,15 +12,15 @@ export default function Brewery({ info }) {
       {info.latitude ? (
         <a
           href={
-            "https://maps.google.com/?q=" + info.latitude + "," + info.longitude
+            'https://maps.google.com/?q=' + info.latitude + ',' + info.longitude
           }
         >
           Google Maps Link
         </a>
       ) : (
-        ""
+        ''
       )}
       <br />
     </p>
-  );
+  )
 }
