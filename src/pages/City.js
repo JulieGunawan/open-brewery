@@ -26,7 +26,7 @@ export function City() {
 
   {data.length == 0 ? (
     <div>
-       "City not found"
+       City not found
     </div>
   ) : (
     data.map((ele) => (<Brewery info={ele} />) )
