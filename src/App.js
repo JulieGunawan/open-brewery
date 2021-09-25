@@ -10,24 +10,24 @@ import { RandomBrewery } from "./pages/RandomBrewery";
 //Mob programming test!
 
 function App() {
-  
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Simon's Super Cool Brewery Website</h1>
-        <Link to="city">City</Link>
-        <Link to="/">Random Brewery</Link>
+        <h1>Our Super Cool Brewery Website</h1>
+        <div className="Header-links">
+          <Link to="city">City</Link>
+          <Link to="/">Random Brewery</Link>
+        </div>
       </header>
       <body>
         <Router className="infoCard">
           <RandomBrewery path="/" />
           <City path="/city" />
-        
         </Router>
       </body>
     </div>
-  ) 
+  );
 }
 
 export default App;

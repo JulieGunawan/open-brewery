@@ -15,19 +15,23 @@ export function City() {
     }
     getData();
   }, [city]);
-  debugger;
 
-  
-  return (<><input
-  onChange={(event) => {
-    setCity(event.target.value);
-  }}
-/> <br/>
-  {data.length == 0 ? (
-    <div>
-       City not found
-    </div>
-  ) : (
-    data.map((ele) => (<Brewery info={ele} />) )
-  )}</>)
+  return (
+    <>
+      <input
+        onChange={(event) => {
+          setCity(event.target.value);
+        }}
+      />
+      <br />
+
+      <div className="infoCard">
+        {data.length == 0 ? (
+          <div>City not found</div>
+        ) : (
+          data.map((ele) => <Brewery info={ele} />)
+        )}
+      </div>
+    </>
+  );
 }

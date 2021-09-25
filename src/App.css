@@ -14,14 +14,20 @@
 }
 
 .App-header {
-  background-color: #4a4063;
+  background-color: hsl(270, 100%, 30%);
   min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: hsl(30, 100%, 70%);
+}
+
+.Header-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .App-link {
@@ -42,15 +48,14 @@ body {
 }
 
 a {
-  color: #4f1271;
+  color: hsl(60, 100%, 30%);
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.infoCard{
-  display:grid;
-  grid-template-columns: repeat (3, 1fr);
-  /*grid-template-columns: repeat(auto-fit, minmax(20ch,1fr));*/
-  flex-direction: rows;
+.infoCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+  flex-direction: row;
   justify-content: flex-start;
 }
