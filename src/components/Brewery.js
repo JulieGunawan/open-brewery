@@ -8,13 +8,17 @@ export default function Brewery({ info }) {
       City: {info.city} <br />
       <a href={info.website_url}>Brewery Website</a>
       <br />
-      <a
-        href={
-          "https://maps.google.com/?q=" + info.latitude + "," + info.longitude
-        }
-      >
-        Google Maps Link
-      </a>
+      {info.latitude ? (
+        <a
+          href={
+            "https://maps.google.com/?q=" + info.latitude + "," + info.longitude
+          }
+        >
+          Google Maps Link
+        </a>
+      ) : (
+        ""
+      )}
       <br />
     </p>
   );
