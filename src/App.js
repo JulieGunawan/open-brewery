@@ -1,7 +1,7 @@
 import logo from "./beer.png";
 import "./App.css";
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+//import axios from "axios";
+//import React, { useState, useEffect } from "react";
 import { Router, Link } from "@reach/router";
 import { Brewery } from "./components";
 import { City } from "./pages/City";

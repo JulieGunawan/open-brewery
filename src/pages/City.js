@@ -17,7 +17,7 @@ export function City() {
   }, [city]);
 
   return (
-    <>
+    <div>
       <input
         onChange={(event) => {
           setCity(event.target.value);
@@ -26,12 +26,12 @@ export function City() {
       <br />
 
       <div className="infoCard">
-        {data.length == 0 ? (
+        {data.length === 0 ? (
           <div>City not found</div>
         ) : (
           data.map((ele) => <Brewery info={ele} />)
         )}
       </div>
-    </>
+    </div>
   );
 }
